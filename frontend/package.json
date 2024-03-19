@@ -5,15 +5,15 @@
 	"scripts": {
 		"build": "vite build",
 		"commit": "cz",
-		"dev": "vite --open",
-		"prepare": "husky install",
+		"dev": "vite",
+		"prepare": "cd .. && husky install",
 		"preview": "vite preview",
 		"preview:test": "start-server-and-test preview http://localhost:4173",
 		"test": "vitest",
 		"test:ci": "vitest run",
-		"test:e2e": "pnpm preview:test 'cypress open'",
-		"test:e2e:headless": "pnpm preview:test 'cypress run'",
-		"test:e2e:ci": "vite build && pnpm preview:test 'cypress run --record'",
+		"test:e2e": "yarb preview:test 'cypress open'",
+		"test:e2e:headless": "yarn preview:test 'cypress run'",
+		"test:e2e:ci": "vite build && yarn preview:test 'cypress run --record'",
 		"format": "prettier -uw --cache --ignore-path .gitignore .",
 		"run-tsc": "tsc",
 		"run-eslint": "eslint --cache --fix --ignore-path .gitignore --ext .ts,.tsx .",
@@ -24,7 +24,9 @@
 	"dependencies": {
 		"@nextui-org/react": "^2.2.10",
 		"@tanstack/react-query": "5.17.0",
+		"@types/lodash": "^4.17.0",
 		"framer-motion": "^11.0.14",
+		"lodash": "^4.17.21",
 		"react": "18.2.0",
 		"react-dom": "18.2.0",
 		"react-router-dom": "6.21.1"
@@ -99,10 +101,5 @@
 			"eslint --cache --fix",
 			"vitest related --run --coverage=false"
 		]
-	},
-	"pnpm": {
-		"overrides": {
-			"headers-polyfill": "3.1.2"
-		}
 	}
 }

@@ -1,0 +1,13 @@
+.dashboard {
+    @apply grid border-1 border-amber-400 m-auto;
+
+    --spacing: 15px;
+    --unit: 40px;
+    --columns: 10;
+
+    width: calc((var(--columns) * 2 * var(--unit)) + ((1 + var(--columns)) * var(--spacing)));
+    padding: var(--spacing);
+    grid-gap: var(--spacing);
+    grid-template-columns: repeat(var(--columns), calc(2 * var(--unit)));
+    grid-auto-rows: 40px;
+}

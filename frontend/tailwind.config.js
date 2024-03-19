@@ -12,7 +12,7 @@ const config = {
 	theme: {
 		fontFamily: {
 			sans: ["Inter", ...defaultConfig.theme.fontFamily.sans]
-		}
+		},
 	},
 	experimental: { optimizeUniversalDefaults: true },
 	plugins: [formsPlugin, nextui()]
